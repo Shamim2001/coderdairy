@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 255);
             $table->string('slug', 255)->unique();
-            $table->longText('description');
+            $table->longText('description')->nullable();
             $table->enum('visibility', ['public', 'privet']);
             $table->foreignId('user_id');
             $table->foreignId('category_id');

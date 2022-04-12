@@ -13,149 +13,42 @@
       </div>
       <!-- end sidebar toggle -->
 
-      <p class="uppercase text-xs text-gray-600 mb-4 tracking-wider">Users</p>
+      <p class="uppercase text-xs text-gray-600 mb-4 tracking-wider">Homes</p>
+
+      <!-- link -->
+      <a href="{{ route('problem.index') }}" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500 {{ request()->routeIs('problem.*') ? 'text-teal-600' : '' }}">
+        <i class="fad fa-user-plus text-xs mr-2"></i>
+        Problems
+      </a>
+      <!-- end link -->
 
       <!-- link -->
       <a href="" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
-        <i class="fad fa-user-plus text-xs mr-2"></i>
-        Add User
+          <i class="fad fa-edit text-xs mr-2"></i>
+        Activity
+      </a>
+      <!-- end link -->
+
+      <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">Apps</p>
+
+      <!-- link -->
+      <a href="" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+          <i class="fad fa-tag text-xs mr-2"></i>
+        Category
       </a>
       <!-- end link -->
 
       <!-- link -->
-      <a href="" class="mb-3 capitalize font-medium text-sm hover:text-purple-600 transition ease-in-out duration-500">
-          <i class="fad fad fa-pen text-xs mr-2"></i>
-        Edit User
+      <a href="" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+          <i class="fad fa-tags text-xs mr-2"></i>
+        Tags
       </a>
       <!-- end link -->
 
       <!-- link -->
-      <a href="" class="mb-3 capitalize font-medium text-sm hover:text-red-600 transition ease-in-out duration-500">
-          <i class="fad fa-trash text-xs mr-2"></i>
-        Delete User
-      </a>
-      <!-- end link -->
-
-
-      <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">Activity</p>
-
-      <!-- link -->
-      <a href="" class="mb-3 capitalize font-medium text-sm hover:text-purple-600 transition ease-in-out duration-500">
-          <i class="fad fad fa-pen text-xs mr-2"></i>
-        Edit User
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="" class="mb-3 capitalize font-medium text-sm hover:text-purple-600 transition ease-in-out duration-500">
-          <i class="fad fad fa-pen text-xs mr-2"></i>
-        Edit
-      </a>
-      <!-- end link -->
-      <!-- link -->
-      <a href="" class="mb-3 capitalize font-medium text-sm hover:text-red-600 transition ease-in-out duration-500">
-          <i class="fad fa-trash text-xs mr-2"></i>
-        Delete
-      </a>
-      <!-- end link -->
-
-
-      <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">Category</p>
-
-      <!-- link -->
-      <a href="" class="mb-3 capitalize font-medium text-sm hover:text-purple-600 transition ease-in-out duration-500">
-          <i class="fad fad fa-pen text-xs mr-2"></i>
-        Edit User
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="" class="mb-3 capitalize font-medium text-sm hover:text-purple-600 transition ease-in-out duration-500">
-          <i class="fad fad fa-pen text-xs mr-2"></i>
-        Edit
-      </a>
-      <!-- end link -->
-      <!-- link -->
-      <a href="" class="mb-3 capitalize font-medium text-sm hover:text-red-600 transition ease-in-out duration-500">
-          <i class="fad fa-trash text-xs mr-2"></i>
-        Delete
-      </a>
-      <!-- end link -->
-
-
-<p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">Media</p>
-
-      <!-- link -->
-      <a href="" class="mb-3 capitalize font-medium text-sm hover:text-purple-600 transition ease-in-out duration-500">
-          <i class="fad fad fa-pen text-xs mr-2"></i>
-        Edit User
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="" class="mb-3 capitalize font-medium text-sm hover:text-purple-600 transition ease-in-out duration-500">
-          <i class="fad fad fa-pen text-xs mr-2"></i>
-        Edit
-      </a>
-      <!-- end link -->
-      <!-- link -->
-      <a href="" class="mb-3 capitalize font-medium text-sm hover:text-red-600 transition ease-in-out duration-500">
-          <i class="fad fa-trash text-xs mr-2"></i>
-        Delete
-      </a>
-      <!-- end link -->
-
-
-<p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">Problems</p>
-
-      <!-- link -->
-      <a href="" class="mb-3 capitalize font-medium text-sm hover:text-purple-600 transition ease-in-out duration-500">
-          <i class="fad fad fa-pen text-xs mr-2"></i>
-        Edit User
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="" class="mb-3 capitalize font-medium text-sm hover:text-purple-600 transition ease-in-out duration-500">
-          <i class="fad fad fa-pen text-xs mr-2"></i>
-        Edit
-      </a>
-      <!-- end link -->
-      <!-- link -->
-      <a href="" class="mb-3 capitalize font-medium text-sm hover:text-red-600 transition ease-in-out duration-500">
-          <i class="fad fa-trash text-xs mr-2"></i>
-        Delete
-      </a>
-      <!-- end link -->
-
-<p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">Solutions</p>
-
-      <!-- link -->
-      <a href="" class="mb-3 capitalize font-medium text-sm hover:text-purple-600 transition ease-in-out duration-500">
-          <i class="fad fad fa-pen text-xs mr-2"></i>
-        Edit User
-      </a>
-      <!-- end link -->
-
-      <!-- link -->
-      <a href="" class="mb-3 capitalize font-medium text-sm hover:text-purple-600 transition ease-in-out duration-500">
-          <i class="fad fad fa-pen text-xs mr-2"></i>
-        Edit
-      </a>
-      <!-- end link -->
-      <!-- link -->
-      <a href="" class="mb-3 capitalize font-medium text-sm hover:text-red-600 transition ease-in-out duration-500">
-          <i class="fad fa-trash text-xs mr-2"></i>
-        Delete
-      </a>
-      <!-- end link -->
-
-<p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">Tags</p>
-
-    <!-- link -->
-      <a href="" class="mb-3 capitalize font-medium text-sm hover:text-purple-600 transition ease-in-out duration-500">
-          <i class="fad fa-search text-xs mr-2"></i>
-        Search
+      <a href="" class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+          <i class="fad fa-image text-xs mr-2"></i>
+        Media
       </a>
       <!-- end link -->
 

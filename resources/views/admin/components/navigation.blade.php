@@ -25,14 +25,7 @@
         <!-- left -->
         <div
             class="text-gray-600 md:w-full md:flex md:flex-row md:justify-evenly md:pb-10 md:mb-10 md:border-b md:border-gray-200">
-            {{-- <a class="mr-2 transition duration-500 ease-in-out hover:text-gray-900" href="#" title="email"><i
-                    class="fad fa-envelope-open-text"></i></a>
-            <a class="mr-2 transition duration-500 ease-in-out hover:text-gray-900" href="#" title="email"><i
-                    class="fad fa-comments-alt"></i></a>
-            <a class="mr-2 transition duration-500 ease-in-out hover:text-gray-900" href="#" title="email"><i
-                    class="fad fa-check-circle"></i></a>
-            <a class="mr-2 transition duration-500 ease-in-out hover:text-gray-900" href="#" title="email"><i
-                    class="fad fa-calendar-exclamation"></i></a> --}}
+
         </div>
         <!-- end left -->
 
@@ -63,31 +56,15 @@
                     <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out"
                         href="#">
                         <i class="fad fa-user-edit text-xs mr-1"></i>
-                        edit my profile
+                        My Profile
                     </a>
                     <!-- end item -->
 
                     <!-- item -->
                     <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out"
                         href="#">
-                        <i class="fad fa-inbox-in text-xs mr-1"></i>
-                        my inbox
-                    </a>
-                    <!-- end item -->
-
-                    <!-- item -->
-                    <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out"
-                        href="#">
-                        <i class="fad fa-badge-check text-xs mr-1"></i>
-                        tasks
-                    </a>
-                    <!-- end item -->
-
-                    <!-- item -->
-                    <a class="px-4 py-2 block capitalize font-medium text-sm tracking-wide bg-white hover:bg-gray-200 hover:text-gray-900 transition-all duration-300 ease-in-out"
-                        href="#">
-                        <i class="fad fa-comment-alt-dots text-xs mr-1"></i>
-                        chats
+                        <i class="fad fa-cogs text-xs mr-1"></i>
+                        Setting
                     </a>
                     <!-- end item -->
 
