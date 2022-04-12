@@ -4,8 +4,8 @@
 
     <!-- logo -->
     <div class="flex-none w-56 flex flex-row items-center">
-        <img src="{{ asset('admin/img/logo.png') }}" class="w-10 flex-none">
-        <strong class="capitalize ml-1 flex-1">{{ env('APP_NAME') }}</strong>
+        <img src="{{ asset('admin/img/logo.jpg') }}" class="w-10 flex-none">
+        <strong class="capitalize ml-1 flex-1 text-red-400">{{ env('APP_NAME') }}</strong>
 
         <button id="sliderBtn" class="flex-none text-right text-gray-900 hidden md:block">
             <i class="fad fa-list-ul"></i>

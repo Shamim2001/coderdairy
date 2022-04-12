@@ -6,7 +6,10 @@
 
         <!-- Start Recent Sales -->
         <div class="card col-span-4 xl:col-span-1">
-            <div class="card-header">Problems</div>
+            <div class="card-header flex justify-between items-center">
+                <h1>Problems</h1>
+                <a href="{{ route('problem.create') }}" class="btn-shadow">Add</a>
+            </div>
 
             <table class="table-auto w-full text-left">
                 <thead>
@@ -25,7 +28,7 @@
                         <tr>
                             <td class="border border-l-0 px-4 py-2"><a href="{{ route('problem.show', $problem) }}" class="hover:text-teal-600">{{ $problem->name }}</a></td>
                             <td class="border border-l-0 px-4 py-2">{{ $problem->visibility }}</td>
-                            <td class="border border-l-0 px-4 py-2">{{ $problem->category_id }}</td>
+                            <td class="border border-l-0 px-4 py-2">{{ $problem->category->name }}</td>
                             <td class="border border-l-0 px-4 py-2"></td>
                             <td class="border border-l-0 px-4 py-2 flex space-x-2 text-xs">
                                 <a href="#" class="btn-bs-primary">Edit</a>
@@ -44,6 +47,9 @@
             </table>
         </div>
         <!-- End Recent Sales -->
+        <div class="mt-5">
+                        {{ $problems->links() }}
+                    </div>
 
     </div>
     <!-- End General Report -->
