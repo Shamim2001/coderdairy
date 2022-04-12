@@ -14,7 +14,9 @@ class ProblemController extends Controller
      */
     public function index()
     {
-        return view('admin.problem.index');
+        return view('admin.problem.index')->with([
+            'problems' => Problem::latest()->paginate(15),
+        ]);
     }
 
     /**
@@ -46,7 +48,7 @@ class ProblemController extends Controller
      */
     public function show(Problem $problem)
     {
-        //
+
     }
 
     /**
