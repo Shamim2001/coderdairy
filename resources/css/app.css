@@ -7,5 +7,5 @@
 }
 
 .formInput {
-    @apply w-full rounded-md;
+    @apply w-full rounded border border-black py-1;
 }
