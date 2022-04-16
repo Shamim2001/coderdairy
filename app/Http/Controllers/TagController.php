@@ -4,17 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
-class TagController extends Controller
-{
+class TagController extends Controller {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index() {
+        return view( 'admin.tag.index' )->with( [
+            'tags' => Tag::orderBy( 'name', 'ASC' )->paginate( 5 ),
+        ] );
     }
 
     /**
@@ -22,9 +23,8 @@ class TagController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create() {
+        return view( 'admin.tag.create' );
     }
 
     /**
@@ -33,9 +33,17 @@ class TagController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store( Request $request ) {
+        $request->validate( [
+            'name' => ['required', 'max:255', 'string'],
+        ] );
+
+        Tag::create( [
+            'name' => $request->name,
+            'slug' => Str::slug( $request->name ),
+        ] );
+
+        return redirect()->route( 'tag.index' )->with( 'success', 'Tag Created' );
     }
 
     /**
@@ -44,8 +52,7 @@ class TagController extends Controller
      * @param  \App\Models\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function show(Tag $tag)
-    {
+    public function show( Tag $tag ) {
         //
     }
 
@@ -55,9 +62,10 @@ class TagController extends Controller
      * @param  \App\Models\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tag $tag)
-    {
-        //
+    public function edit( Tag $tag ) {
+        return view( 'admin.tag.edit' )->with( [
+            'tag' => $tag,
+        ] );
     }
 
     /**
@@ -67,9 +75,17 @@ class TagController extends Controller
      * @param  \App\Models\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tag $tag)
-    {
-        //
+    public function update( Request $request, Tag $tag ) {
+        $request->validate( [
+            'name' => ['required', 'max:255', 'string'],
+        ] );
+
+        $tag->update( [
+            'name' => $request->name,
+            'slug' => Str::slug( $request->name ),
+        ] );
+
+        return redirect()->route( 'tag.index' )->with( 'success', 'Tag Updated' );
     }
 
     /**
@@ -78,8 +94,9 @@ class TagController extends Controller
      * @param  \App\Models\Tag  $tag
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tag $tag)
-    {
-        //
+    public function destroy( Tag $tag ) {
+        $tag->delete();
+
+        return redirect()->route( 'tag.index' )->with( 'success', 'tag Deleted' );
     }
 }

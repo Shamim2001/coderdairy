@@ -7,8 +7,8 @@
         <!-- Start Recent Sales -->
         <div class="card col-span-4 xl:col-span-1">
             <div class="card-header flex justify-between items-center">
-                <h1>Category</h1>
-                <a href="{{ route('category.create') }}" class="btn-shadow text-xs">Add New</a>
+                <h1>Tags</h1>
+                <a href="{{ route('tag.create') }}" class="btn-shadow text-xs">Add New</a>
             </div>
 
             <table class="table-auto w-full text-left">
@@ -23,15 +23,15 @@
                 <tbody class="text-gray-600">
 
 
-                    @forelse ($categories as $category)
+                    @forelse ($tags as $tag)
                         <tr>
-                            <td class="border border-l-0 px-4 py-2">{{ $category->name }}</td>
-                            <td class="border border-l-0 px-4 py-2 lowercase">{{ $category->slug }}</td>
+                            <td class="border border-l-0 px-4 py-2">{{ $tag->name }}</td>
+                            <td class="border border-l-0 px-4 py-2 lowercase">{{ $tag->slug }}</td>
                             <td class="border border-l-0 px-4 py-2"></td>
                             <td class="border border-l-0 px-4 py-2 flex space-x-2 text-xs">
-                                <a href="{{ route('category.edit', $category->id) }}" class="btn-bs-primary">Edit</a>
+                                <a href="{{ route('tag.edit' , $tag->id) }}" class="btn-bs-primary">Edit</a>
 
-                                <form action="{{ route('category.destroy', $category->id) }}" method="post" onsubmit="return confirm('Do you really want to delete?');">
+                                <form action="{{ route('tag.destroy', $tag->id) }}" method="post" onsubmit="return confirm('Do you really want to delete?');">
                                     @csrf
                                     @method('DELETE')
 
@@ -42,7 +42,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td class="border border-l-0 px-4 py-2 text-center text-red-500" colspan="5">Category Not Found!
+                            <td class="border border-l-0 px-4 py-2 text-center text-red-500" colspan="5">Tags Not Found!
                             </td>
                         </tr>
                     @endforelse
@@ -51,7 +51,7 @@
                 </tbody>
             </table>
             <div class="p-5">
-                {{ $categories->links() }}
+                {{ $tags->links() }}
             </div>
         </div>
         <!-- End Recent Sales -->
