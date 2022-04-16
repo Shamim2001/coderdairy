@@ -17,6 +17,8 @@
                     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div class="p-6 bg-white border-gray-200">
 
+
+
                             <form action="{{ route('tag.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
 

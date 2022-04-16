@@ -6,6 +6,12 @@
 
         <!-- Start Recent Sales -->
         <div class="card col-span-4 xl:col-span-1">
+            @if (Session('success'))
+                <div class="bg-green-200 text-green-700 py-2 text-center" id="status_massege">
+                    <p class="text-green-700">Success</p>
+                </div>
+            @endif
+
             <div class="card-header flex justify-between items-center">
                 <h1>Category</h1>
                 <a href="{{ route('category.create') }}" class="btn-shadow text-xs">Add New</a>
@@ -31,7 +37,8 @@
                             <td class="border border-l-0 px-4 py-2 flex space-x-2 text-xs">
                                 <a href="{{ route('category.edit', $category->id) }}" class="btn-bs-primary">Edit</a>
 
-                                <form action="{{ route('category.destroy', $category->id) }}" method="post" onsubmit="return confirm('Do you really want to delete?');">
+                                <form action="{{ route('category.destroy', $category->id) }}" method="post"
+                                    onsubmit="return confirm('Do you really want to delete?');">
                                     @csrf
                                     @method('DELETE')
 

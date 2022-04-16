@@ -24,7 +24,7 @@
 
   <!-- strat content -->
   <div class="bg-gray-100 flex-1 p-6 md:mt-16">
-
+    @include('layouts.messages')
     @yield('content')
 
   </div>
@@ -34,7 +34,9 @@
 <!-- end wrapper -->
 
 <!-- script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="{{ asset('admin/js/customscripts.js') }}"></script>
 <script src="{{ asset('admin/js/scripts.js') }}"></script>
 <!-- end script -->
 
