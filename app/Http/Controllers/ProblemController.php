@@ -15,7 +15,7 @@ class ProblemController extends Controller
     public function index()
     {
         return view('admin.problem.index')->with([
-            'problems' => Problem::latest()->paginate(15),
+            'problems' => Problem::orderBy('name', 'ASC')->paginate(15),
         ]);
     }
 

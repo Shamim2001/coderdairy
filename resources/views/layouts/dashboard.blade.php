@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
   <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/style.css') }}">
   <title>{{env('APP_NAME')}}</title>
+  <!-- ckeditor  script -->
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+
 </head>
 <body class="bg-gray-100">
 

@@ -8,7 +8,7 @@
         <div class="card col-span-4 xl:col-span-1">
             <div class="card-header flex justify-between items-center">
                 <h1>Problems</h1>
-                <a href="{{ route('problem.create') }}" class="btn-shadow">Add</a>
+                <a href="{{ route('problem.create') }}" class="btn-shadow">Add New</a>
             </div>
 
             <table class="table-auto w-full text-left">
@@ -26,7 +26,8 @@
 
                     @forelse ($problems as $problem)
                         <tr>
-                            <td class="border border-l-0 px-4 py-2"><a href="{{ route('problem.show', $problem) }}" class="hover:text-teal-600">{{ $problem->name }}</a></td>
+                            <td class="border border-l-0 px-4 py-2"><a href="{{ route('problem.show', $problem) }}"
+                                    class="hover:text-teal-600">{{ $problem->name }}</a></td>
                             <td class="border border-l-0 px-4 py-2">{{ $problem->visibility }}</td>
                             <td class="border border-l-0 px-4 py-2">{{ $problem->category->name }}</td>
                             <td class="border border-l-0 px-4 py-2"></td>
@@ -38,18 +39,19 @@
                         </tr>
                     @empty
                         <tr>
-                            <td class="border border-l-0 px-4 py-2 text-center text-red-500" colspan="5">Problem Not Found!</td>
+                            <td class="border border-l-0 px-4 py-2 text-center text-red-500" colspan="5">Problem Not Found!
+                            </td>
                         </tr>
                     @endforelse
 
 
                 </tbody>
             </table>
+            <div class="p-5">
+                {{ $problems->links() }}
+            </div>
         </div>
         <!-- End Recent Sales -->
-        <div class="mt-5">
-                        {{ $problems->links() }}
-                    </div>
 
     </div>
     <!-- End General Report -->

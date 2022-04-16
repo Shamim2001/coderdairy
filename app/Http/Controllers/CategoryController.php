@@ -4,17 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
-class CategoryController extends Controller
-{
+class CategoryController extends Controller {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index() {
+        return view( 'admin.category.index' )->with( [
+            'categories' => Category::orderBy( 'name', 'ASC' )->paginate( 5 ),
+        ] );
     }
 
     /**
@@ -22,9 +23,8 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create() {
+        return view( 'admin.category.create' );
     }
 
     /**
@@ -33,9 +33,19 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store( Request $request ) {
+
+        $request->validate( [
+            'name' => ['required', 'max:255', 'string'],
+
+        ] );
+
+        Category::create( [
+            'name' => $request->name,
+            'slug' => Str::slug( $request->name ),
+        ] );
+
+        return redirect()->route( 'category.index' )->with('success', 'Category Created');
     }
 
     /**
@@ -44,8 +54,7 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
-    {
+    public function show( Category $category ) {
         //
     }
 
@@ -55,9 +64,10 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
-    {
-        //
+    public function edit( Category $category ) {
+        return view( 'admin.category.edit' )->with( [
+            'category' => $category,
+        ] );
     }
 
     /**
@@ -67,9 +77,18 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
-    {
-        //
+    public function update( Request $request, Category $category ) {
+        $request->validate( [
+            'name' => ['required', 'max:255', 'string'],
+
+        ] );
+
+        $category->update( [
+            'name' => $request->name,
+            'slug' => Str::slug( $request->name ),
+        ] );
+
+        return redirect()->route( 'category.index' )->with('success', 'Category Updated');
     }
 
     /**
@@ -78,8 +97,9 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
-    {
-        //
+    public function destroy( Category $category ) {
+        $category->delete();
+
+        return redirect()->route( 'category.index' )->with('success', 'Category Deleted');
     }
 }
