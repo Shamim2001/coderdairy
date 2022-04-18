@@ -29,8 +29,13 @@
                             <td class="border border-l-0 px-4 py-2"><a href="{{ route('problem.show', $problem) }}"
                                     class="hover:text-teal-600">{{ $problem->name }}</a></td>
                             <td class="border border-l-0 px-4 py-2">{{ $problem->visibility }}</td>
-                            <td class="border border-l-0 px-4 py-2">{{ $problem->category->name }}</td>
-                            <td class="border border-l-0 px-4 py-2"></td>
+                            <td class="border border-l-0 px-4 py-2 text-xs">{{ $problem->category->name }}</td>
+                            <td class="border border-l-0 px-4 py-2 capitalize">
+                                @foreach ($problem->tags as $tag)
+                                    <a href="#" class="text-xs bg-teal-600 text-white rounded-sm px-2 py-1">{{ $tag->name }}</a>
+                                @endforeach
+
+                            </td>
                             <td class="border border-l-0 px-4 py-2 flex space-x-2 text-xs">
                                 <a href="#" class="btn-bs-primary">Edit</a>
                                 <a href="#" class="btn-bs-success">View</a>

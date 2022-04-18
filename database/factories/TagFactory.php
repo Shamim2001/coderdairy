@@ -15,7 +15,7 @@ class TagFactory extends Factory {
      */
     public function definition() {
 
-        $name = $this->faker->sentence( rand( 2, 3 ) );
+        $name = $this->faker->sentence( rand( 1, 1 ) );
         return [
             'name' => $name,
             'slug' => Str::slug( $name ),

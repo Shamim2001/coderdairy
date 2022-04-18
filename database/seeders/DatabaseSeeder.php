@@ -29,6 +29,6 @@ class DatabaseSeeder extends Seeder
 
         Category::factory(10)->create();
         Problem::factory(20)->create();
-        Tag::factory(20)->create();
+        Tag::factory(10)->create();
     }
 }

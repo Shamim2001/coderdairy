@@ -1,131 +1,165 @@
 @extends('layouts.dashboard')
-
 @section('content')
     <!-- General Report -->
     <div class="grid grid-cols-4 gap-6 xl:grid-cols-1">
 
-        <!-- Start Recent Sales -->
+        <!-- Start Problems List -->
         <div class="card col-span-4 xl:col-span-1">
-            <div class="card-header flex justify-between items-center">
-                <h1 class="h5">Add New Problem</h1>
-                <a href="{{ route('problem.index') }}" class="btn-shadow">Back</a>
+            <div class="card-heade uppercase pt-6 px-4 flex items-center justify-between">
+                <h2 class="font-semibold ml-2">Create Problem</h2>
+                <a href="{{ route('problem.create') }}" class="btn-bs-primary">Back</a>
             </div>
 
 
-            <div class="py-12">
-                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div class="p-6 bg-white border-b border-gray-200">
 
-                            <form action="" method="POST" enctype="multipart/form-data">
-                                @csrf
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="px-6 py-0 bg-white border-b border-gray-200">
 
-                                <div class="mt-6 flex">
-                                    <div class="flex-1 mr-4">
-                                        <label for="name" class="cursor-pointer block text-sm mb-1">Name</label>
-                                        <input type="text" name="name" id="name"
-                                            class="w-full rounded border border-gray-600 py-2" value="{{ old('name') }}">
+                    <form action="{{ route('problem.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
 
-                                        @error('name')
-                                            <p class="text-red-700 text-sm">{{ $message }}</p>
-                                        @enderror
-
-                                    </div>
-                                    <div class="flex-1 mr-4">
-                                        <label for="category" class="cursor-pointer block text-sm mb-1">Category</label>
-                                        <input type="text" name="category" id="category"
-                                            class="w-full rounded border border-gray-600 py-2"
-                                            value="{{ old('category') }}">
-
-                                        @error('category')
-                                            <p class="text-red-700 text-sm">{{ $message }}</p>
-                                        @enderror
-
-                                    </div>
-                                </div>
-
-                                <div class="mt-6 flex justify-between">
-                                    <div class="flex-1 mr-4">
-                                        <label for="visibility" class="cursor-pointer block text-sm mb-1">Visibility</label>
-                                        <select name="visibility" id="visibility"
-                                            class="w-full rounded border border-gray-600 py-2">
-                                            <option value="">Select visibility</option>
-                                            <option value="public">Public</option>
-                                            <option value="privet">Privet</option>
-                                        </select>
-
-                                        @error('visibility')
-                                            <p class="text-red-700 text-sm">{{ $message }}</p>
-                                        @enderror
-
-                                    </div>
-
-                                    <div class="flex-1 mr-4">
-                                        {{-- <label for="tag" class="cursor-pointer block text-sm mb-1">Tags</label>
-                                <input type="text" name="tag" id="tag" class="w-full rounded border border-gray-600 py-2" value="{{ old('tag')}}"> --}}
-
-                                        <div class="flex justify-center">
-                                            <div>
-                                                <div class="form-check">
-                                                    <input
-                                                        class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                        type="checkbox" value="" id="flexCheckDefault">
-                                                    <label class="form-check-label inline-block text-gray-800"
-                                                        for="flexCheckDefault">
-                                                        Default checkbox
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input
-                                                        class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
-                                                        type="checkbox" value="" id="flexCheckChecked" checked>
-                                                    <label class="form-check-label inline-block text-gray-800"
-                                                        for="flexCheckChecked">
-                                                        Checked checkbox
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>F
-
-                                        @error('tag')
-                                            <p class="text-red-700 text-sm">{{ $message }}</p>
-                                        @enderror
-
-                                    </div>
-                                </div>
-
-                                <div class="mt-6 flex">
-                                    <div class="flex-1">
-                                        <label for="description"
-                                            class="cursor-pointer block text-sm mb-1">Description</label>
-                                        <textarea name="description" id="description" rows="10"
-                                            class="w-full rounded border border-gray-600 py-2">{{ old('description') }}</textarea>
-
-                                        @error('description')
-                                            <p class="text-red-700 text-sm">{{ $message }}</p>
-                                        @enderror
-
-                                    </div>
-                                </div>
-
-
-                                <div class="mt-6">
-                                    <button type="submit"
-                                        class="bg-blue-800 px-4 py-2 text-white rounded-md text-base uppercase">Create</button>
-                                </div>
-                            </form>
-
+                        <div class="mt-6 flex">
+                            <div class="flex-1">
+                                <label for="name" class="formLabel">Problem Title</label>
+                                <input type="text" name="name" id="name" placeholder="Problem Title" class="formInput"
+                                    value="{{ old('name') }}">
+                                @error('name')
+                                    <p class="text-red-700"></p>
+                                @enderror
+                            </div>
 
                         </div>
-                    </div>
+
+                        <div class="mt-6 flex">
+                            <div class="flex-1 mr-2">
+                                <label for="category_id" class="formLabel">Category</label>
+
+                                <select name="category_id" id="category_id" class="formInput">
+                                    <option value="none">Select Category</option>
+                                     @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+
+                                {{-- <select name="category_id" id="category_id" class="formInput">
+                                    <option value="none">Select Category</option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select> --}}
+                                @error('category_id')
+                                    <p class="text-red-700">{{ $message }}</p>
+                                @enderror
+                            </div>
+
+                            <div class="flex-1 ml-2">
+                                <label for="visibility" class="formLabel">Visibility</label>
+                                <select name="visibility" id="visibility" class="formInput">
+                                    <option value="none">Select Visibility
+                                    </option>
+                                    <option value="private" {{ old('visibility') == 'private' ? 'selected' : '' }}>Private
+                                    </option>
+                                    <option value="public" {{ old('visibility') == 'public' ? 'selected' : '' }}>
+                                        Public
+                                    </option>
+                                </select>
+                                @error('visibility')
+                                    <p class="text-red-700">{{ $message }}</p>
+                                @enderror
+                            </div>
+                        </div>
+
+
+                        <div class="mt-6 flex">
+                            <div class="flex-1">
+                                <label for="country" class="formLabel">Description</label>
+
+                                <textarea name="description" id="description" class="formInput">
+                                    </textarea>
+                                @error('description')
+                                    <p class="text-red-700">{{ $message }}</p>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex">
+                            <div class="flex-1">
+                                <label for="tags" class="formLabel">Tags</label>
+                                @foreach ($tags as $tag)
+
+                                <input type="checkbox" id="{{ $tag->slug }}" name="tags[]" value="{{ $tag->id }}">
+                                <label for="{{ $tag->slug }}" class="mr-2 cursor-pointer">{{ $tag->name }}</label>
+                                @endforeach
+
+
+
+
+                                {{-- @foreach ($tags as $tag)
+                                    <input type="checkbox" id="{{ $tag->slug }}" name="tags[]"
+                                        value="{{ $tag->id }}">
+                                    <label for="{{ $tag->slug }}" class="mr-2 cursor-pointer">
+                                        {{ $tag->name }}</label>
+                                @endforeach --}}
+
+
+
+                                @error('tags')
+                                    <p class="text-red-700">{{ $message }}</p>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <div class="flex-1 ml-1 mr-1">
+                                <label for="thumbnail" class="formLabel">Thumbnails</label>
+                                <input type="file" name="thumbnail[]" multiple id="thumbnail"
+                                    class="w-full border-2 border-dashed border-teal-600 py-20 text-center rounded-md">
+                                @error('thumbnail')
+                                    <p class="text-red-700">{{ $message }}</p>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="upload_image_preview flex"></div>
+
+                        <div class="mb-6">
+                            <button type="submit"
+                                class="px-10 py-2 bg-teal-600 text-white rounded mt-3 uppercase text-base">Create</button>
+                        </div>
+                    </form>
+
                 </div>
             </div>
-
-
-
         </div>
-        <!-- End Recent Sales -->
 
     </div>
     <!-- End General Report -->
+@endsection
+
+
+@section('scripts')
+    <script>
+        jQuery(document).ready(function($) {
+            CKEDITOR.replace("description");
+        });
+        $(function() {
+            // Multiple images preview in browser
+            var imagesPreview = function(input, placeToInsertImagePreview) {
+                if (input.files) {
+                    var filesAmount = input.files.length;
+                    for (i = 0; i < filesAmount; i++) {
+                        var reader = new FileReader();
+                        reader.onload = function(event) {
+                            $($.parseHTML('<img class="m-5" style="width:150px">')).attr('src', event.target
+                                .result).appendTo(placeToInsertImagePreview);
+                        }
+                        reader.readAsDataURL(input.files[i]);
+                    }
+                }
+            };
+            $('#thumbnail').on('change', function() {
+                imagesPreview(this, 'div.upload_image_preview');
+            });
+        });
+    </script>
 @endsection
