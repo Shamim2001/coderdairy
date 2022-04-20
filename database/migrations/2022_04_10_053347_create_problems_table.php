@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name', 255);
             $table->string('slug', 255);
             $table->longText('description')->nullable();
-            $table->enum('visibility', ['public', 'privet']);
+            $table->enum('visibility', ['public', 'private']);
             $table->foreignId('user_id');
             $table->foreignId('category_id');
             $table->timestamps();

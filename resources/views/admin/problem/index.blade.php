@@ -37,9 +37,15 @@
 
                             </td>
                             <td class="border border-l-0 px-4 py-2 flex space-x-2 text-xs">
-                                <a href="#" class="btn-bs-primary">Edit</a>
-                                <a href="#" class="btn-bs-success">View</a>
-                                <a href="#" class="btn-bs-danger">Delete</a>
+                                <a href="{{ route('problem.edit', $problem) }}" class="btn-bs-primary">Edit</a>
+
+                                <form action="{{ route('problem.destroy', $problem) }}" method="post"
+                                    onsubmit="return confirm('Do you really want to delete?');">
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button type="submit" class="btn-bs-danger">Delete</button>
+                                </form>
                             </td>
                         </tr>
                     @empty

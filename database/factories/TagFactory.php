@@ -19,6 +19,7 @@ class TagFactory extends Factory {
         return [
             'name' => $name,
             'slug' => Str::slug( $name ),
+            'user_id' => '1'
         ];
     }
 }

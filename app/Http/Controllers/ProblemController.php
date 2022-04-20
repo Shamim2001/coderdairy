@@ -8,19 +8,18 @@ use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Symfony\Component\VarDumper\Caster\RedisCaster;
 
-class ProblemController extends Controller
-{
+class ProblemController extends Controller {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('admin.problem.index')->with([
-            'problems' => Problem::orderBy('name', 'ASC')->paginate(15),
-        ]);
+    public function index() {
+        return view( 'admin.problem.index' )->with( [
+            'problems' => Problem::orderBy( 'name', 'ASC' )->paginate( 15 ),
+        ] );
     }
 
     /**
@@ -28,12 +27,11 @@ class ProblemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view('admin.problem.create')->with([
-            'categories' => Category::orderBy('name', 'ASC')->get(),
-            'tags' => Tag::orderBy('name', 'ASC')->get(),
-        ]);
+    public function create() {
+        return view( 'admin.problem.create' )->with( [
+            'categories' => Category::where( 'user_id', Auth::id() )->orderBy( 'name', 'ASC' )->get(),
+            'tags'       => Tag::where( 'user_id', Auth::id() )->orderBy( 'name', 'ASC' )->get(),
+        ] );
     }
 
     /**
@@ -42,25 +40,24 @@ class ProblemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name' => ['required', 'max:255', 'string'],
-            'visibility' => ['required', 'not_in:none'],
+    public function store( Request $request ) {
+        $request->validate( [
+            'name'        => ['required', 'max:255', 'string'],
+            'visibility'  => ['required', 'not_in:none'],
             'category_id' => ['required', 'not_in:none'],
-        ]);
+        ] );
 
-        $problem = Problem::create([
-            'name' => $request->name,
-            'slug' => Str::slug($request->name),
+        $problem = Problem::create( [
+            'name'        => $request->name,
+            'slug'        => Str::slug( $request->name ),
             'description' => $request->description,
-            'visibility' => $request->visibility,
-            'user_id' => Auth::user()->id,
-            'category_id' => $request->category_id
-        ]);
-        $problem->tags()->attach($request->tags);
+            'visibility'  => $request->visibility,
+            'user_id'     => Auth::id(),
+            'category_id' => $request->category_id,
+        ] );
+        $problem->tags()->attach( $request->tags );
 
-        return redirect()->route('problem.index')->with('success', 'Problem has been created');
+        return redirect()->route( 'problem.index' )->with( 'success', 'Problem has been created' );
     }
 
     /**
@@ -69,12 +66,11 @@ class ProblemController extends Controller
      * @param  \App\Models\Problem  $problem
      * @return \Illuminate\Http\Response
      */
-    public function show(Problem $problem)
-    {
+    public function show( Problem $problem ) {
 
-        return view('admin.problem.show')->with([
+        return view( 'admin.problem.show' )->with( [
             'problem' => $problem,
-        ]);
+        ] );
     }
 
     /**
@@ -83,9 +79,12 @@ class ProblemController extends Controller
      * @param  \App\Models\Problem  $problem
      * @return \Illuminate\Http\Response
      */
-    public function edit(Problem $problem)
-    {
-        //
+    public function edit( Problem $problem ) {
+        return view( 'admin.problem.edit' )->with( [
+            'problem'    => $problem,
+            'categories' => Category::where( 'user_id', Auth::id() )->orderBy( 'name', 'ASC' )->get(),
+            'tags'       => Tag::where( 'user_id', Auth::id() )->orderBy( 'name', 'ASC' )->get(),
+        ] );
     }
 
     /**
@@ -95,9 +94,25 @@ class ProblemController extends Controller
      * @param  \App\Models\Problem  $problem
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Problem $problem)
-    {
-        //
+    public function update( Request $request, Problem $problem ) {
+        $request->validate( [
+            'name'        => ['required', 'max:255', 'string'],
+            'visibility'  => ['required', 'not_in:none'],
+            'category_id' => ['required', 'not_in:none'],
+        ] );
+
+        $problem->update( [
+            'name'        => $request->name,
+            'slug'        => Str::slug( $request->name ),
+            'description' => $request->description,
+            'visibility'  => $request->visibility,
+            'user_id'     => Auth::id(),
+            'category_id' => $request->category_id,
+        ] );
+
+        $problem->tags()->sync( $request->tags );
+
+        return redirect()->route('problem.index')->with('success', 'Problem Updated');
     }
 
     /**
@@ -106,8 +121,10 @@ class ProblemController extends Controller
      * @param  \App\Models\Problem  $problem
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Problem $problem)
-    {
-        //
+    public function destroy( Problem $problem ) {
+        $problem->tags()->detach();
+        $problem->delete();
+
+        return redirect()->route('problem.index')->with('success', 'Problem Deleted!');
     }
 }

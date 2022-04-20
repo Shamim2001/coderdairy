@@ -17,7 +17,7 @@ class ProblemFactory extends Factory {
      */
     public function definition() {
         $name = $this->faker->sentence( rand( 5, 10 ) );
-        $visibility = ['public', 'privet'];
+        $visibility = ['public', 'private'];
 
         return [
             'name'        => $name,
