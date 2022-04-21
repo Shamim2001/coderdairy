@@ -38,7 +38,7 @@
                                 <select name="category_id" id="category_id" class="formInput">
                                     <option value="none">Select Category</option>
                                      @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}" {{ $category->id ==  $category->name ? 'selected' : ''  }}>{{ $category->name }}</option>
+                                    <option value="{{ $category->id }}" {{ $problem->category->id ==  $category->id ? 'selected' : ''  }}>{{ $category->name }}</option>
                                     @endforeach
                                 </select>
                                 @error('category_id')
@@ -68,7 +68,7 @@
                             <div class="flex-1">
                                 <label for="country" class="formLabel">Description</label>
 
-                                <textarea name="description" id="description" class="formInput" value="{{ $problem->description }}">
+                                <textarea name="description" id="description" class="formInput" value="{{ old('description') }}">
                                     </textarea>
                                 @error('description')
                                     <p class="text-red-700">{{ $message }}</p>
@@ -143,6 +143,7 @@
                 }
             };
             $('#thumbnail').on('change', function() {
+                $('div.upload_image_preview').html('');
                 imagesPreview(this, 'div.upload_image_preview');
             });
         });

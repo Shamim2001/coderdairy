@@ -21,6 +21,7 @@ class Problem extends Model
         return $this->belongsToMany(Tag::class, 'problems_tags', 'problem_id', 'tag_id');
     }
 
+
     // Change default Route name
     public function getRouteKeyName()
     {

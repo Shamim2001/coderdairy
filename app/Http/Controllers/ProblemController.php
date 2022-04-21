@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ActivityEvent;
 use App\Models\Category;
 use App\Models\Problem;
 use App\Models\Tag;
@@ -57,7 +58,10 @@ class ProblemController extends Controller {
         ] );
         $problem->tags()->attach( $request->tags );
 
-        return redirect()->route( 'problem.index' )->with( 'success', 'Problem has been created' );
+        // activity event Fire
+
+
+        return redirect()->route( 'problem.index' )->with( 'success', 'New Entry Created Successfully' );
     }
 
     /**

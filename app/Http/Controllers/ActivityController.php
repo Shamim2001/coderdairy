@@ -4,17 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Activity;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class ActivityController extends Controller
-{
+class ActivityController extends Controller {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index() {
+        return view( 'admin.activity.index' )->with( [
+            'activities' => Activity::where('user_id', Auth::id())->latest()->paginate( 10 ),
+        ] );
     }
 
     /**
@@ -22,8 +23,7 @@ class ActivityController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
@@ -33,8 +33,7 @@ class ActivityController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store( Request $request ) {
         //
     }
 
@@ -44,8 +43,7 @@ class ActivityController extends Controller
      * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function show(Activity $activity)
-    {
+    public function show( Activity $activity ) {
         //
     }
 
@@ -55,8 +53,7 @@ class ActivityController extends Controller
      * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function edit(Activity $activity)
-    {
+    public function edit( Activity $activity ) {
         //
     }
 
@@ -67,8 +64,7 @@ class ActivityController extends Controller
      * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Activity $activity)
-    {
+    public function update( Request $request, Activity $activity ) {
         //
     }
 
@@ -78,8 +74,7 @@ class ActivityController extends Controller
      * @param  \App\Models\Activity  $activity
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Activity $activity)
-    {
+    public function destroy( Activity $activity ) {
         //
     }
 }
