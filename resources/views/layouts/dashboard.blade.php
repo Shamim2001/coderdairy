@@ -6,7 +6,6 @@
   <link rel="shortcut icon" href="{{ asset('admin/img/logo.jpg') }}" type="image/x-icon">
   <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.12.1/css/pro.min.css">
   <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/magnific-popup.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/jquery.dm-uploads.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/style.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/custom.css') }}">
   <title>{{env('APP_NAME')}}</title>
@@ -40,10 +39,11 @@
 <!-- script -->
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="{{ asset('admin/js/jquery.magnific-popup.min.js') }}"></script>
-<script src="{{ asset('admin/js/jquery.dm-uploader.min.js') }}"></script>
 <script src="{{ asset('admin/js/customscripts.js') }}"></script>
 <script src="{{ asset('admin/js/scripts.js') }}"></script>
+
 <!-- end script -->
 @yield('scripts')
+
 </body>
 </html>
