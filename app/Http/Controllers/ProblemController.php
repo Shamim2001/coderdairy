@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Events\ActivityEvent;
 use App\Models\Category;
+use App\Models\Media;
 use App\Models\Problem;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Symfony\Component\VarDumper\Caster\RedisCaster;
 
@@ -57,6 +59,23 @@ class ProblemController extends Controller {
             'category_id' => $request->category_id,
         ] );
         $problem->tags()->attach( $request->tags );
+
+        if(!empty($request->file('thumbnails'))) {
+            foreach($request->thumbnails as $thumb) {
+                $image = time(). '-' . $thumb->getClientOriginalName();
+                // save image
+                $thumb->storeAs('public/uploads', $image);
+                // Storage::put('public/uploads', $image);
+
+                // create Media
+                Media::create([
+                    'name' => $image,
+                    'user_id' => Auth::id(),
+                    'problem_id' => $problem->id,
+                ]);
+
+            }
+        }
 
         // activity event Fire
 

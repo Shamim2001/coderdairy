@@ -14,7 +14,9 @@ class SolutionController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.solution.index')->with([
+            'solutions' => Solution::orderBy( 'name', 'ASC' )->paginate( 10 ),
+        ]);
     }
 
     /**

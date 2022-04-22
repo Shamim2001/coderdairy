@@ -8,7 +8,6 @@
             <!-- header -->
             <div class="p-5 border-b flex justify-between items-center">
                 <h1 class="h6">{{ $problem->name }}</h1>
-                <a href="{{ route('solution.index') }}" class="btn-shadow">Add Solution</a>
                 <a href="{{ route('problem.index') }}" class="btn-shadow">Back</a>
             </div>
             <!-- end header -->
@@ -178,18 +177,4 @@
 
     </div>
     <!-- End General Report -->
-@endsection
-
-@section('scripts')
-    <script>
-        $(document).ready(function() {
-            $('.problem-gallery').magnificPopup({
-                delegate: 'a',
-                type: 'image',
-                gallery: {
-                    enabled: true
-                }
-            });
-        });
-    </script>
 @endsection
