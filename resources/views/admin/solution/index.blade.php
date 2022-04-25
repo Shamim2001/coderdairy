@@ -14,11 +14,7 @@
             <table class="table-auto w-full text-left">
                 <thead>
                     <tr>
-                        <th class="px-4 py-2 border-r text-center"></th>
-                        <th class="px-4 py-2 border-r">name</th>
-                        <th class="px-4 py-2 border-r">visibility</th>
-                        <th class="px-4 py-2 border-r">category</th>
-                        <th class="px-4 py-2 border-r">Tags</th>
+                        <th class="px-4 py-2 border-r">Solution For</th>
                         <th class="px-4 py-2 border-r">Action</th>
                     </tr>
                 </thead>
@@ -27,19 +23,9 @@
 
                     @forelse ($solutions as $solution)
                         <tr>
-                            <td class="border border-l-0 px-4 py-2 text-center">
-                                <i class="fa {{ $solution->visibility == 'public' ? 'fa-eye' : 'fa-eye-slash' }}"></i>
-                            </td>
                             <td class="border border-l-0 px-4 py-2"><a href="{{ route('solution.show', $solution) }}"
-                                    class="hover:text-teal-600">{{ $solution->name }}</a></td>
-                            <td class="border border-l-0 px-4 py-2">{{ $solution->visibility }}</td>
-                            <td class="border border-l-0 px-4 py-2 text-xs">{{ $solution->category->name }}</td>
-                            <td class="border border-l-0 px-4 py-2 capitalize">
-                                @foreach ($solution->tags as $tag)
-                                    <a href="#" class="text-xs bg-teal-600 text-white rounded-sm px-2 py-1">{{ $tag->name }}</a>
-                                @endforeach
+                                    class="hover:text-teal-600">{{ $solution->problem->name }}</a></td>
 
-                            </td>
                             <td class="border border-l-0 px-4 py-2 flex space-x-2 text-xs">
                                 <a href="{{ route('solution.edit', $solution) }}" class="btn-bs-primary">Edit</a>
 
@@ -54,7 +40,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td class="border border-l-0 px-4 py-2 text-center text-red-500" colspan="5">Problem Not Found!
+                            <td class="border border-l-0 px-4 py-2 text-center text-red-500" colspan="3">Solution Not Found!
                             </td>
                         </tr>
                     @endforelse

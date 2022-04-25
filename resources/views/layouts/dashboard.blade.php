@@ -37,11 +37,10 @@
 <!-- end wrapper -->
 
 <!-- script -->
-<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+{{-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> --}}
 <script src="{{ asset('admin/js/jquery.magnific-popup.min.js') }}"></script>
 <script src="{{ asset('admin/js/customscripts.js') }}"></script>
 <script src="{{ asset('admin/js/scripts.js') }}"></script>
-
 <!-- end script -->
 @yield('scripts')
 

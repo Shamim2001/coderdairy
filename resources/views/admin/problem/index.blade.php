@@ -19,6 +19,7 @@
                         <th class="px-4 py-2 border-r">visibility</th>
                         <th class="px-4 py-2 border-r">category</th>
                         <th class="px-4 py-2 border-r">Tags</th>
+                        <th class="px-4 py-2 border-r">Solutions</th>
                         <th class="px-4 py-2 border-r">Action</th>
                     </tr>
                 </thead>
@@ -39,6 +40,9 @@
                                     <a href="#" class="text-xs bg-teal-600 text-white rounded-sm px-2 py-1">{{ $tag->name }}</a>
                                 @endforeach
 
+                            </td>
+                            <td class="border border-l-0 px-4 py-2">
+                                {{ count($problem->solutions) }}
                             </td>
                             <td class="border border-l-0 px-4 py-2 flex space-x-2 text-xs">
                                 <a href="{{ route('problem.edit', $problem) }}" class="btn-bs-primary">Edit</a>

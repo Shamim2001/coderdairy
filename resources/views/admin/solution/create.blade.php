@@ -6,22 +6,27 @@
         <!-- Start Problems List -->
         <div class="card col-span-4 xl:col-span-1">
             <div class="card-heade uppercase pt-6 px-4 flex items-center justify-between">
-                <h2 class="font-semibold ml-2">Create Problem</h2>
-                <a href="{{ route('problem.create') }}" class="btn-bs-primary">Back</a>
+                <h2 class="font-semibold ml-2">Create Solution</h2>
+                <a href="{{ URL::previous() }}" class="btn-bs-primary">Back</a>
             </div>
 
 
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="px-6 py-0 bg-white border-b border-gray-200">
 
-                    <form action="{{ route('problem.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('solution.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
                         <div class="mt-6 flex">
                             <div class="flex-1">
-                                <label for="name" class="formLabel">Problem Title</label>
-                                <input type="text" name="name" id="name" placeholder="Problem Title" class="formInput"
-                                    value="{{ old('name') }}">
+                                <label for="problem_id" class="formLabel">Problem For</label>
+
+                                <select name="problem_id" id="problem_id" class="formInput">
+                                    <option value="none">Select solution</option>
+                                    @foreach ($problems as $problem)
+                                        <option class="py-1" value="{{ $problem->id }}" {{ request('problem_id') == $problem->id ? 'selected' : '' }}>{{ $problem->name }}</option>
+                                    @endforeach
+                                </select>
                                 @error('name')
                                     <p class="text-red-700"></p>
                                 @enderror
@@ -29,65 +34,22 @@
 
                         </div>
 
-                        <div class="mt-6 flex">
-                            <div class="flex-1 mr-2">
-                                <label for="category_id" class="formLabel">Category</label>
 
-                                <select name="category_id" id="category_id" class="formInput">
-                                    <option value="none">Select Category</option>
-                                     @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                    @endforeach
-                                </select>
-                                @error('category_id')
-                                    <p class="text-red-700">{{ $message }}</p>
-                                @enderror
-                            </div>
-
-                            <div class="flex-1 ml-2">
-                                <label for="visibility" class="formLabel">Visibility</label>
-                                <select name="visibility" id="visibility" class="formInput">
-                                    <option value="none">Select Visibility
-                                    </option>
-                                    <option value="private" {{ old('visibility') == 'private' ? 'selected' : '' }}>Private
-                                    </option>
-                                    <option value="public" {{ old('visibility') == 'public' ? 'selected' : '' }}>
-                                        Public
-                                    </option>
-                                </select>
-                                @error('visibility')
-                                    <p class="text-red-700">{{ $message }}</p>
-                                @enderror
-                            </div>
-                        </div>
 
 
                         <div class="mt-6 flex">
                             <div class="flex-1">
-                                <label for="country" class="formLabel">Description</label>
+                                <label for="solution" class="formLabel">Solution</label>
 
-                                <textarea name="description" id="description" class="formInput">
+                                <textarea name="solution" id="solution" class="formInput">
                                     </textarea>
-                                @error('description')
+                                @error('solution')
                                     <p class="text-red-700">{{ $message }}</p>
                                 @enderror
                             </div>
                         </div>
 
-                        <div class="mt-6 flex">
-                            <div class="flex-1">
-                                <label for="tags" class="formLabel">Tags</label>
-                                @foreach ($tags as $tag)
 
-                                <input type="checkbox" id="{{ $tag->slug }}" name="tags[]" value="{{ $tag->id }}">
-                                <label for="{{ $tag->slug }}" class="mr-2 cursor-pointer">{{ $tag->name }}</label>
-                                @endforeach
-
-                                @error('tags')
-                                    <p class="text-red-700">{{ $message }}</p>
-                                @enderror
-                            </div>
-                        </div>
 
                         <div class="mt-6">
                             <div class="flex-1 ml-1 mr-1">
@@ -104,7 +66,7 @@
 
                         <div class="mb-6">
                             <button type="submit"
-                                class="px-10 py-2 bg-teal-600 text-white rounded mt-3 uppercase text-base">Create</button>
+                                class="px-10 py-2 bg-teal-600 text-white rounded mt-4 uppercase text-sm">Create Solution</button>
                         </div>
                     </form>
 
@@ -120,7 +82,7 @@
 @section('scripts')
     <script>
         jQuery(document).ready(function($) {
-            CKEDITOR.replace("description");
+            CKEDITOR.replace("solution");
         });
         $(function() {
             // Multiple images preview in browser
