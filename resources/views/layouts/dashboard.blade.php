@@ -8,11 +8,14 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/magnific-popup.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/style.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('admin/css/custom.css') }}">
-  <title>{{env('APP_NAME')}}</title>
+
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
+  <title>Coder Dairy</title>
   <!-- ckeditor  script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-
+    @yield('style')
 </head>
 <body class="bg-gray-100">
 
