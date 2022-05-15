@@ -3,6 +3,7 @@
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProblemController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SolutionController;
 use App\Http\Controllers\TagController;
 use App\Models\Activity;
@@ -40,9 +41,12 @@ Route::prefix( 'dashboard' )->middleware( 'auth' )->group( function () {
             //throw $th;
             return response()->json( ['error' => $th->getMessage()] );
         }
-
-
     })->name('ajax.tag.store');
+
+    // Profiles
+Route::get( 'profiles', [ProfileController::class, 'index'] )->name( 'profiles.index' );
+Route::put( 'profiles/update', [ProfileController::class, 'update'] )->name( 'profiles.update' );
+
 } );
 
 require __DIR__ . '/auth.php';
