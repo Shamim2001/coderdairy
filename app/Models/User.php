@@ -39,5 +39,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+// Accessor
+    public function getImageAttribute($name)
+    {
+        if(str_starts_with($name, 'http')) {
+            return $name;
+        }else{
+            return asset('storage/uploads/'.$name);
+        }
+    }
 
 }

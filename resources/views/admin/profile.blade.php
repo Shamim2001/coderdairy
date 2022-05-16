@@ -53,7 +53,7 @@
                             <div class="flex mt-6 justify-between">
                                 <div class="border p-5 flex flex-col">
                                     <label for="thumbnail" class="w-full mb-2 cursor-pointer">Thumbnail</label>
-                                    <input type="file" name="thumbnails[]" multiple id="thumbnail"
+                                    <input type="file" name="thumbnail" id="thumbnail"
                                         class="w-full border-2 border-dashed border-teal-600 p-5 text-center rounded-md">
 
                                 </div>

@@ -23,14 +23,14 @@ class ProfileController extends Controller {
 
         $user = User::find( Auth::id() );
 
-        $thumb = $request->thumbnails;
+        $thumb = $user->image;
 
-        if ( !empty( $request->file( 'thumbnails' ) ) ) {
-            foreach ( $request->thumbnails as $thumb ) {
-                $image = time() . '-' . $thumb->getClientOriginalName();
+        if ( !empty( $request->file( 'thumbnail' ) ) ) {
+
+                $thumb = time() . '-' . $request->thumbnail->getClientOriginalName();
+                $thumb = str_replace($thumb, ' ', '-');
                 // save image
-                $thumb->storeAs( 'public/uploads', $image );
-            }
+                $request->thumbnail->storeAs( 'public/uploads', $thumb );
         }
 
         $user->update( [

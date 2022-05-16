@@ -3,9 +3,9 @@
 @section('content')
     <!-- General Report -->
     <div class="grid grid-cols-4 gap-6 xl:grid-cols-1">
-
         <!-- Start Recent Sales -->
         <div class="card col-span-4 xl:col-span-1">
+
             <div class="card-header flex justify-between items-center">
                 <h1>Problems</h1>
                 <a href="{{ route('problem.create') }}" class="btn-shadow">Add New</a>
