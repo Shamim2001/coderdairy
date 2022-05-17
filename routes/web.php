@@ -7,7 +7,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SolutionController;
 use App\Http\Controllers\TagController;
+use App\Models\Problem;
+use App\Models\Solution;
 use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -18,8 +21,17 @@ Route::get( '/', function () {
 } );
 
 Route::prefix( 'dashboard' )->middleware( 'auth' )->group( function () {
+
     Route::get( '/', function () {
-        return view( 'admin.index' );
+        // $problem = Problem::all();
+        // dd($problem);
+        return view( 'admin.index' )->with([
+            'problem' => Problem::where('user_id', Auth::id())->get(),
+            'solution' => Solution::where('user_id', Auth::id())->get(),
+        ]);
+
+
+
     } )->name( 'dashboard' );
 
     Route::resource( 'problem', ProblemController::class );
@@ -28,6 +40,7 @@ Route::prefix( 'dashboard' )->middleware( 'auth' )->group( function () {
     Route::resource( 'solution', SolutionController::class );
     Route::resource( 'tag', TagController::class );
 
+    // AJax Route
     Route::post( 'ajax/tag/stote', function ( Request $request ) {
 
         try {

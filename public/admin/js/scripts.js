@@ -320,12 +320,6 @@ var options = function(type, height, numbers , color){
 
   var analytics_1 =  document.getElementsByClassName("analytics_1");
 
-  if (analytics_1 != null && typeof(analytics_1) != 'undefined') {
-      var chart = new ApexCharts(analytics_1[0], options("area" , '51px' , numArr(10,99) , '#4fd1c5'));
-      var chart_1 = new ApexCharts(analytics_1[1], options("area" , '51px' , numArr(10,99) , '#4c51bf'));
-      chart.render();
-      chart_1.render();
-  }
 
 
 
@@ -417,8 +411,8 @@ var sealsOptions = {
 
 
 var sealsOverview = document.getElementById('sealsOverview');
-var sealsOverviewChart = new ApexCharts(sealsOverview, options('bar' , '100%', numArr(20,999) , '#30aba0'));
-sealsOverviewChart.render();
+// var sealsOverviewChart = new ApexCharts(sealsOverview, options('bar' , '100%', numArr(20,999) , '#30aba0'));
+// sealsOverviewChart.render();
 var options = {
     chart: {
     //   height: 280,

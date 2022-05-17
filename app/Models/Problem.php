@@ -33,6 +33,12 @@ class Problem extends Model
         return $this->hasMany(Solution::class, 'problem_id', 'id');
     }
 
+    // one to manay relationship solution
+    // public function problemC()
+    // {
+    //     return $this->belongsTo(User::class);
+    // }
+
 
     // Change default Route name
     public function getRouteKeyName()
