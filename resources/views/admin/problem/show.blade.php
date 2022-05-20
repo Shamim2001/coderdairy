@@ -119,8 +119,8 @@
                     <div class="grid gap-2 grid-flow-row grid-cols-3 problem-gallery">
 
                         @foreach ($problem->media as $media)
-                            <a href="{{ $media->name }}">
-                                <img src="{{ $media->name }}" class="m-1"
+                            <a href="{{ $media->name['url'] }}">
+                                <img src="{{ $media->name['url'] }}" class="m-1"
                                     alt="">
                             </a>
                         @endforeach
@@ -153,8 +153,8 @@
                 <div class="w-4/12 p-5">
                     <div class="grid gap-2 grid-flow-row grid-cols-3 problem-gallery">
                         @foreach ($solution->media as $media)
-                            <a href="{{ $media->name }}">
-                                <img src="{{ $media->name }}" class="m-1"
+                            <a href="{{ $media->name["url"] }}">
+                                <img src="{{ $media->name["url"] }}" class="m-1"
                                     alt="">
                             </a>
                         @endforeach

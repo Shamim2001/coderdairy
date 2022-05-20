@@ -9,6 +9,7 @@ class Problem extends Model
 {
     use HasFactory;
     protected $guarded = ['id', 'created_at', 'updated_at'];
+    protected $with = ['media'];
 
     // Category Reletionship
     public function category() {
@@ -32,12 +33,6 @@ class Problem extends Model
     {
         return $this->hasMany(Solution::class, 'problem_id', 'id');
     }
-
-    // one to manay relationship solution
-    // public function problemC()
-    // {
-    //     return $this->belongsTo(User::class);
-    // }
 
 
     // Change default Route name

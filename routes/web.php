@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 
 Route::get( '/', function () {
-    return view( 'welcome' );
+    return view( 'welcome' )->with([
+        'problems' => Problem::where('user_id', Auth::id())->get(),
+    ]);
 } );
 
 Route::prefix( 'dashboard' )->middleware( 'auth' )->group( function () {

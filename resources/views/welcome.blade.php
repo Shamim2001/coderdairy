@@ -1,132 +1,862 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en" class="a0">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 
-        <title>Laravel</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Startup Tailwind CSS Template</title>
+    <meta name="title" content="Startup Tailwind | Startup Web Template for Tailwind CSS" />
+    <meta name="description" content="" />
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="index.html" />
+    <meta property="og:title" content="Startup Tailwind | SaaS Web Template for Tailwind CSS" />
+    <meta property="og:description"
+        content="Startup Tailwind is a complete Tailwind CSS template crafted specially for SaaS, Software Mobile App and Web App Sites. Comes with all essential components and pages you need to kickstart your SaaS websites." />
+    <meta property="og:image" content="" />
 
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
-        </style>
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://saas-tailwind.preview.uideck.com/" />
+    <meta property="twitter:title" content="Startup Tailwind | SaaS Web Template for Tailwind CSS" />
+    <meta property="twitter:description"
+        content="Startup Tailwind is a complete Tailwind CSS template crafted specially for SaaS, Software Mobile App and Web App Sites. Comes with all essential components and pages you need to kickstart your SaaS websites." />
+    <meta property="twitter:image" content="" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="{{ asset('admin/css/animate.css') }}" />
+    <link rel="stylesheet" href="css/glightbox.min.css" />
+    <link rel="stylesheet" href="{{ asset('admin/css/tailwind.css') }}" />
+    <script src="{{ asset('admin/js/wow.min.js') }}"></script>
+    <script>
+        // ===== wow js
+        new WOW().init();
+    </script>
+</head>
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+<body class="dark:a1">
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+    <header class="header a2 a3 a4 a5 a6 a7 a8 a9">
+        <div class="aa">
+            <div class="a8 ab[-16px] a9 ac ad">
+                <div class="ae af ag">
+                    <a href="" class="a7 ah ai header-logo">
+                        <img src="{{ asset('admin/img/logo.jpg') }}" alt="logo" class="a7 dark:aj" />
+                        <img src="{{ asset('admin/img/logo.jpg') }}" alt="logo" class="a7 aj dark:ah " style="width: 60px" />
+                    </a>
+                </div>
+                <div class="a8 ae ac a9 a7">
+                    <div>
+                        <button id="navbarToggler" aria-label="Mobile Menu"
+                            class=" ah a3 ak al/2 am[-50%] lg:aj focus:an ao ap aq[6px] ar ">
+                            <span class="ad as[30px] at[2px] au[6px] ah av dark:aw"></span>
+                            <span class=" ad as[30px] at[2px] au[6px] ah av dark:aw "></span>
+                            <span class=" ad as[30px] at[2px] au[6px] ah av dark:aw "></span>
+                        </button>
+                        <nav id="navbarCollapse"
+                            class=" a3 ax lg:ay lg:ae xl:az aw dark:av lg:dark:a2 lg:a2 aA ar aB[250px] a7 lg:ag lg:a7 ak aC aj lg:ah lg:aD lg:a ">
+                            <ul class="aF lg:a8">
+                                <li class="ad aG">
+                                    <a href="#home" class="menu-scroll aH text-dark dark:aI group-hover:aJ aK lg:aL lg:aM lg:aN a8 aO lg:aP ">
+                                        Home
+                                    </a>
+                                </li>
+                                <li class="ad aG">
+                                    <a href="#about"
+                                        class=" menu-scroll aH text-dark dark:aI group-hover:aJ aK lg:aL lg:aM lg:aN a8 aO lg:aP lg:aQ xl:aR">
+                                        About
+                                    </a>
+                                </li>
+                                <li class="ad aG">
+                                    <a href="#about"
+                                        class=" menu-scroll aH text-dark dark:aI group-hover:aJ aK lg:aL lg:aM lg:aN a8 aO lg:aP lg:aQ xl:aR">
+                                        Blog
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="a8 a1d a9 a1e lg:a1f">
+                        @if (Route::has('login'))
+                            @auth
+                                <a href="{{ url('/dashboard') }}" class=" aj md:ah aH a1g a1h dark:aI hover:aJ a1i a1j"> Dashboard </a>
+                            @else
+                                <a href="{{ route('login') }}" class=" aj md:ah aH a1g a1h dark:aI hover:aJ a1i a1j"> Sign In</a>
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}" class="aj md:ah aH a1g aI a1k a1i a1l md:a1m lg:az xl:a1m hover:a1n hover:a1o a13 a1p a1q a1a"> Sign Up</a>
+                                @endif
+                            @endauth
                         @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
-                </div>
-
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                     </div>
                 </div>
             </div>
         </div>
-    </body>
+    </header>
+
+
+    <section id="home"
+        class="
+        ad a1H a1I[120px] a1J[110px]
+        md:a1I[150px] md:a1J[120px]
+        xl:a1I[180px] xl:a1J[160px]
+        2xl:a1I[210px] 2xl:a1J[200px]
+      ">
+        <div class="aa">
+            <div class="a8 a1K ab[-16px]">
+                <div class="a7 ae">
+                    <div class="a1L aB[570px] a1M wow fadeInUp" data-wow-delay=".2s">
+                        <h1
+                            class="
+                  a1A
+                  dark:aI
+                  a1g a1O
+                  sm:a1P
+                  md:a3D
+                  a2D
+                  sm:a2D
+                  md:a2D
+                  a2v
+                ">
+                            Use the coder diary for your needs
+                        </h1>
+                        <p
+                            class="
+                  a1R a1T
+                  md:a27
+                  a1U
+                  md:a1U
+                  a1S
+                  dark:aI dark:a3E
+                  a2s
+                ">
+                            Coder diaries have been created for developers. Because to keep a list of the problems that are happening and how to solve them to work every day. So save the daily work problems in the coder diary
+                        </p>
+                        <div class="a8 a9 a1x">
+                            <a href="{{ route('problem.create') }}"
+                                class=" aH a2P aI a1k a3q a1l hover:a2i a3F a13 a1p a1a a2j ">
+                                Get Started
+                            </a>
+                            <a href="#about"
+                                class=" aH a2P a1A a1 a29 dark:aI dark:aw dark:a29 a3q a1l hover:a3G dark:hover:a3G a3F a13 a1p a1a a2j ">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="a3 a4 a_ a1Y[-1]">
+            <svg width="450" height="556" viewBox="0 0 450 556" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="277" cy="63" r="225" fill="url(#paint0_linear_25:217)" />
+                <circle cx="17.9997" cy="182" r="18" fill="url(#paint1_radial_25:217)" />
+                <circle cx="76.9997" cy="288" r="34" fill="url(#paint2_radial_25:217)" />
+                <circle cx="325.486" cy="302.87" r="180" transform="rotate(-37.6852 325.486 302.87)"
+                    fill="url(#paint3_linear_25:217)" />
+                <circle opacity="0.8" cx="184.521" cy="315.521" r="132.862" transform="rotate(114.874 184.521 315.521)"
+                    stroke="url(#paint4_linear_25:217)" />
+                <circle opacity="0.8" cx="356" cy="290" r="179.5" transform="rotate(-30 356 290)"
+                    stroke="url(#paint5_linear_25:217)" />
+                <circle opacity="0.8" cx="191.659" cy="302.659" r="133.362" transform="rotate(133.319 191.659 302.659)"
+                    fill="url(#paint6_linear_25:217)" />
+                <defs>
+                    <linearGradient id="paint0_linear_25:217" x1="-54.5003" y1="-178" x2="222" y2="288"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4A6CF7" />
+                        <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
+                    </linearGradient>
+                    <radialGradient id="paint1_radial_25:217" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                        gradientTransform="translate(17.9997 182) rotate(90) scale(18)">
+                        <stop offset="0.145833" stop-color="#4A6CF7" stop-opacity="0" />
+                        <stop offset="1" stop-color="#4A6CF7" stop-opacity="0.08" />
+                    </radialGradient>
+                    <radialGradient id="paint2_radial_25:217" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                        gradientTransform="translate(76.9997 288) rotate(90) scale(34)">
+                        <stop offset="0.145833" stop-color="#4A6CF7" stop-opacity="0" />
+                        <stop offset="1" stop-color="#4A6CF7" stop-opacity="0.08" />
+                    </radialGradient>
+                    <linearGradient id="paint3_linear_25:217" x1="226.775" y1="-66.1548" x2="292.157" y2="351.421"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4A6CF7" />
+                        <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
+                    </linearGradient>
+                    <linearGradient id="paint4_linear_25:217" x1="184.521" y1="182.159" x2="184.521" y2="448.882"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4A6CF7" />
+                        <stop offset="1" stop-color="white" stop-opacity="0" />
+                    </linearGradient>
+                    <linearGradient id="paint5_linear_25:217" x1="356" y1="110" x2="356" y2="470"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4A6CF7" />
+                        <stop offset="1" stop-color="white" stop-opacity="0" />
+                    </linearGradient>
+                    <linearGradient id="paint6_linear_25:217" x1="118.524" y1="29.2497" x2="166.965" y2="338.63"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4A6CF7" />
+                        <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+        <div class="a3 a1X a5 a1Y[-1]">
+            <svg width="364" height="201" viewBox="0 0 364 201" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M5.88928 72.3303C33.6599 66.4798 101.397 64.9086 150.178 105.427C211.155 156.076 229.59 162.093 264.333 166.607C299.076 171.12 337.718 183.657 362.889 212.24"
+                    stroke="url(#paint0_linear_25:218)" />
+                <path
+                    d="M-22.1107 72.3303C5.65989 66.4798 73.3965 64.9086 122.178 105.427C183.155 156.076 201.59 162.093 236.333 166.607C271.076 171.12 309.718 183.657 334.889 212.24"
+                    stroke="url(#paint1_linear_25:218)" />
+                <path
+                    d="M-53.1107 72.3303C-25.3401 66.4798 42.3965 64.9086 91.1783 105.427C152.155 156.076 170.59 162.093 205.333 166.607C240.076 171.12 278.718 183.657 303.889 212.24"
+                    stroke="url(#paint2_linear_25:218)" />
+                <path
+                    d="M-98.1618 65.0889C-68.1416 60.0601 4.73364 60.4882 56.0734 102.431C120.248 154.86 139.905 161.419 177.137 166.956C214.37 172.493 255.575 186.165 281.856 215.481"
+                    stroke="url(#paint3_linear_25:218)" />
+                <circle opacity="0.8" cx="214.505" cy="60.5054" r="49.7205" transform="rotate(-13.421 214.505 60.5054)"
+                    stroke="url(#paint4_linear_25:218)" />
+                <circle cx="220" cy="63" r="43" fill="url(#paint5_radial_25:218)" />
+                <defs>
+                    <linearGradient id="paint0_linear_25:218" x1="184.389" y1="69.2405" x2="184.389" y2="212.24"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4A6CF7" stop-opacity="0" />
+                        <stop offset="1" stop-color="#4A6CF7" />
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_25:218" x1="156.389" y1="69.2405" x2="156.389" y2="212.24"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4A6CF7" stop-opacity="0" />
+                        <stop offset="1" stop-color="#4A6CF7" />
+                    </linearGradient>
+                    <linearGradient id="paint2_linear_25:218" x1="125.389" y1="69.2405" x2="125.389" y2="212.24"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4A6CF7" stop-opacity="0" />
+                        <stop offset="1" stop-color="#4A6CF7" />
+                    </linearGradient>
+                    <linearGradient id="paint3_linear_25:218" x1="93.8507" y1="67.2674" x2="89.9278" y2="210.214"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4A6CF7" stop-opacity="0" />
+                        <stop offset="1" stop-color="#4A6CF7" />
+                    </linearGradient>
+                    <linearGradient id="paint4_linear_25:218" x1="214.505" y1="10.2849" x2="212.684" y2="99.5816"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4A6CF7" />
+                        <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
+                    </linearGradient>
+                    <radialGradient id="paint5_radial_25:218" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                        gradientTransform="translate(220 63) rotate(90) scale(43)">
+                        <stop offset="0.145833" stop-color="white" stop-opacity="0" />
+                        <stop offset="1" stop-color="white" stop-opacity="0.08" />
+                    </radialGradient>
+                </defs>
+            </svg>
+        </div>
+
+    </section>
+
+
+    <section id="blog" class="bg-primary a1Z a3A">
+        <div class="aa">
+            <div class="a8 a1K ab[-16px]">
+                <div class="a7 ae">
+                    <div class="
+                a1L aB[570px] a1M a3s[100px]
+                wow
+                fadeInUp
+              "
+                        data-wow-delay=".1s">
+                        <h2
+                            class=" a1A dark:aI a1g a1O sm:a1P md:a24[45px] a1 ">
+                            Our Latest Blogs
+                        </h2>
+                        <p
+                            class=" a1S aH md:a1T a1U md:a1 ">
+                            There are many problem list variations of passages of Lorem Ipsum available
+                            but the majority have suffered alteration in some form.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="a8 a1K ab[-16px] a1x">
+
+                @foreach ($problems as $problem )
+
+
+                <div class="a7 md:aU/3 lg:a1_/2 xl:a1_/3 ae">
+                    <div class=" ad aw dark:av a33 a13 a2p a1V wow fadeInUp" data-wow-delay=".1s">
+                        <a href="javascript:void(0)" class="a7 ah ad">
+                            <span
+                                class=" a3 a34 a35 a1k a1w aM a9 a1x aK ae a2P a1b aI ">
+                                Computer
+                            </span>
+                            <img src="{{ optional($problem->media)->first()->name['url']?? 'https://picsum.photos/300?random='.rand(1, 50) }}" alt="image" class="a7" />
+                        </a>
+                        <div
+                            class=" a36 sm:a2Y md:ai md:az lg:a2Y xl:ai xl:a37 2xl:a2 ">
+                            <h3>
+                                <a href="javascript:void(0)"
+                                    class=" a1g a1A dark:aI a27 sm:a2u ah a1Q hover:a1W dark:hover:a1 ">
+                                    {{ $problem->name }}
+                                </a>
+                            </h3>
+                            <p
+                                class=" a a1 a1 a3 a2 a2 a2 a2 dark:a2o dark:a2 ">
+                                {{ strip_tags($problem->description) }}
+                            </p>
+                            <div class="a8 a9">
+                                <div
+                                    class=" a8 a9 a39 a2O xl:a3a 2xl:a39 xl:a2A 2xl:a2O a3b a2z a2M dark:a2o dark:a2 ">
+                                    <div
+                                        class=" aB[40px] a7 at[40px] a1w a2p a2G ">
+                                        <img src="{{Auth::user()->image }}" alt="author" class="a7" />
+                                    </div>
+                                    <div class="a7">
+                                        <h4
+                                            class=" a1b a1R a1h dark:aI a2K ">
+                                            By
+                                            <a href="javascript:void(0)"
+                                                class=" a1h dark:aI hover:a1W dark:hover:a1W ">
+                                                {{ Auth::user()->name }}
+                                            </a>
+                                        </h4>
+                                        <p class="a3c a1S">
+                                            Web Designer
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="a22">
+                                    <h4 class=" a1b a1R a1h dark:aI a2K "> Date</h4>
+                                    <p class="a3c a1S">{{ $problem->created_at }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="a1I[120px] a3A">
+        <div class="aa">
+            <div class="a8 a1K ab[-16px]">
+                <div class="a7 lg:a2q/12 ae">
+                    <div class="
+                a1k a3g[3%]
+                dark:av
+                a13 a3t a2s
+                lg:a2v
+                sm:a3B[55px]
+                lg:a3t
+                xl:a3B[55px]
+                wow
+                fadeInUp
+              "
+                        data-wow-delay=".15s
+              ">
+                        <h2
+                            class="
+                  a1g a1A
+                  dark:aI
+                  a2u
+                  sm:a1O
+                  lg:a2u
+                  xl:a1O
+                  a30
+                ">
+                            Need Help? Open a Ticket
+                        </h2>
+                        <p class="a1S aH a1R a2s">
+                            Our support team will get back to you ASAP via email.
+                        </p>
+                        <form>
+                            <div class="a8 a1K ab[-16px]">
+                                <div class="a7 md:a1_/2 ae">
+                                    <div class="a23">
+                                        <label for="name"
+                                            class="
+                          ah a1b a1R a1h
+                          dark:aI
+                          a30
+                        ">
+                                            Your Name
+                                        </label>
+                                        <input type="text" placeholder="Enter your name"
+                                            class="
+                          a7 a3l a3m
+                          dark:a3w[#242B51]
+                          a13 a33
+                          dark:a1n
+                          a1i
+                          az
+                          a1S
+                          aH
+                          a3x
+                          a3o
+                          focus-visible:aE
+                          focus:a3p
+                        " />
+                                    </div>
+                                </div>
+                                <div class="a7 md:a1_/2 ae">
+                                    <div class="a23">
+                                        <label for="email"
+                                            class="
+                          ah a1b a1R a1h
+                          dark:aI
+                          a30
+                        ">
+                                            Your Email
+                                        </label>
+                                        <input type="email" placeholder="Enter your email"
+                                            class="
+                          a7 a3l a3m
+                          dark:a3w[#242B51]
+                          a13 a33
+                          dark:a1n
+                          a1i
+                          az
+                          a1S
+                          aH
+                          a3x
+                          a3o
+                          focus-visible:aE
+                          focus:a3p
+                        " />
+                                    </div>
+                                </div>
+                                <div class="a7 ae">
+                                    <div class="a23">
+                                        <label for="message"
+                                            class="
+                          ah a1b a1R a1h
+                          dark:aI
+                          a30
+                        ">
+                                            Your Message
+                                        </label>
+                                        <textarea name="message" rows="5" placeholder="Enter your Message"
+                                            class="
+                          a7 a3l a3m
+                          dark:a3w[#242B51]
+                          a13 a33
+                          dark:a1n
+                          a1i
+                          az
+                          a1S
+                          aH
+                          a3x
+                          a3o
+                          focus-visible:aE
+                          focus:a3p
+                          a3C
+                        "></textarea>
+                                    </div>
+                                </div>
+                                <div class="a7 ae">
+                                    <a href="javascript:void(0)"
+                                        class="
+                        aH
+                        a1R
+                        aI
+                        a1k
+                        a3q
+                        a1m
+                        hover:a2i hover:a1n
+                        a13
+                        a1p
+                        a1a
+                        a2j
+                      ">
+                                        Submit Ticket
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="a7 lg:a20/12 ae">
+                    <div class="
+                ad
+                a1H
+                a13
+                a1k
+                a3g[3%]
+                dark:a29
+                a2Y
+                sm:a3t
+                lg:a2Y
+                xl:a3t
+                a2v
+                wow
+                fadeInUp
+              "
+                        data-wow-delay=".2s
+              ">
+                        <h3
+                            class="
+                  a1A
+                  dark:aI
+                  a1g a2u a2D a1Q
+                ">
+                            Subscribe to receive future updates
+                        </h3>
+                        <p
+                            class="
+                  a1R
+                  aH
+                  a1S
+                  a1U
+                  a3u
+                  a2F
+                  a2B
+                  a2z
+                  a3v
+                  dark:a2o dark:a3v
+                ">
+                            Lorem ipsum dolor sited Sed ullam corper consectur adipiscing
+                            Mae ornare massa quis lectus.
+                        </p>
+                        <form>
+                            <input type="text" name="name" placeholder="Enter your name"
+                                class="
+                    a7
+                    a3l
+                    a2z
+                    a2M
+                    dark:a2o
+                    dark:a2M
+                    dark:a3w[#242B51]
+                    a13
+                    a1i
+                    az
+                    a1R
+                    a1S
+                    aH
+                    a3x
+                    a3o
+                    focus-visible:aE
+                    focus:a3p focus:a3y
+                    a1Q
+                  " />
+                            <input type="email" name="email" placeholder="Enter your email"
+                                class="
+                    a7
+                    a3l
+                    a2z
+                    a2M
+                    dark:a2o
+                    dark:a2M
+                    dark:a3w[#242B51]
+                    a13
+                    a1i
+                    az
+                    a1R
+                    a1S
+                    aH
+                    a3x
+                    a3o
+                    focus-visible:aE
+                    focus:a3p focus:a3y
+                    a1Q
+                  " />
+                            <input type="submit" value="Subscribe"
+                                class="
+                    a7
+                    a3l
+                    a3p
+                    a1k
+                    a13
+                    a1i
+                    az
+                    a1R
+                    aI
+                    aH
+                    a1M
+                    a3o
+                    a1r
+                    focus-visible:aE
+                    hover:a1n hover:a2i
+                    a1p a3z a2j a1Q
+                  " />
+                            <p
+                                class="
+                    aH
+                    a1S
+                    a1M
+                    a1R
+                    a1U
+                  ">
+                                No spam guaranteed, So please don’t send any spam mail.
+                            </p>
+                        </form>
+                        <div class="a3 a4 a5 a1Y[-1]">
+                            <svg width="370" height="596" viewBox="0 0 370 596" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_88:141" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                    width="370" height="596">
+                                    <rect width="370" height="596" rx="2" fill="#1D2144" />
+                                </mask>
+                                <g mask="url(#mask0_88:141)">
+                                    <path opacity="0.15"
+                                        d="M15.4076 50.9571L54.1541 99.0711L71.4489 35.1605L15.4076 50.9571Z"
+                                        fill="url(#paint0_linear_88:141)" />
+                                    <path opacity="0.15" d="M20.7137 501.422L44.6431 474.241L6 470.624L20.7137 501.422Z"
+                                        fill="url(#paint1_linear_88:141)" />
+                                    <path opacity="0.1"
+                                        d="M331.676 198.309C344.398 204.636 359.168 194.704 358.107 180.536C357.12 167.363 342.941 159.531 331.265 165.71C318.077 172.69 318.317 191.664 331.676 198.309Z"
+                                        fill="url(#paint2_linear_88:141)" />
+                                    <g opacity="0.3">
+                                        <path
+                                            d="M209 89.9999C216 77.3332 235.7 50.7999 258.5 45.9999C287 39.9999 303 41.9999 314 30.4999C325 18.9999 334 -3.50014 357 -3.50014C380 -3.50014 395 4.99986 408.5 -8.50014C422 -22.0001 418.5 -46.0001 452 -37.5001C478.8 -30.7001 515.167 -45 530 -53"
+                                            stroke="url(#paint3_linear_88:141)" />
+                                        <path
+                                            d="M251 64.9999C258 52.3332 277.7 25.7999 300.5 20.9999C329 14.9999 345 16.9999 356 5.49986C367 -6.00014 376 -28.5001 399 -28.5001C422 -28.5001 437 -20.0001 450.5 -33.5001C464 -47.0001 460.5 -71.0001 494 -62.5001C520.8 -55.7001 557.167 -70 572 -78"
+                                            stroke="url(#paint4_linear_88:141)" />
+                                        <path
+                                            d="M212 73.9999C219 61.3332 238.7 34.7999 261.5 29.9999C290 23.9999 306 25.9999 317 14.4999C328 2.99986 337 -19.5001 360 -19.5001C383 -19.5001 398 -11.0001 411.5 -24.5001C425 -38.0001 421.5 -62.0001 455 -53.5001C481.8 -46.7001 518.167 -61 533 -69"
+                                            stroke="url(#paint5_linear_88:141)" />
+                                        <path
+                                            d="M249 40.9999C256 28.3332 275.7 1.79986 298.5 -3.00014C327 -9.00014 343 -7.00014 354 -18.5001C365 -30.0001 374 -52.5001 397 -52.5001C420 -52.5001 435 -44.0001 448.5 -57.5001C462 -71.0001 458.5 -95.0001 492 -86.5001C518.8 -79.7001 555.167 -94 570 -102"
+                                            stroke="url(#paint6_linear_88:141)" />
+                                    </g>
+                                </g>
+                                <defs>
+                                    <linearGradient id="paint0_linear_88:141" x1="13.4497" y1="63.5059" x2="81.144"
+                                        y2="41.5072" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="white" />
+                                        <stop offset="1" stop-color="white" stop-opacity="0" />
+                                    </linearGradient>
+                                    <linearGradient id="paint1_linear_88:141" x1="28.1579" y1="501.301" x2="8.69936"
+                                        y2="464.391" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="white" />
+                                        <stop offset="1" stop-color="white" stop-opacity="0" />
+                                    </linearGradient>
+                                    <linearGradient id="paint2_linear_88:141" x1="338" y1="167" x2="349.488"
+                                        y2="200.004" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="white" />
+                                        <stop offset="1" stop-color="white" stop-opacity="0" />
+                                    </linearGradient>
+                                    <linearGradient id="paint3_linear_88:141" x1="369.5" y1="-53" x2="369.5"
+                                        y2="89.9999" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="white" />
+                                        <stop offset="1" stop-color="white" stop-opacity="0" />
+                                    </linearGradient>
+                                    <linearGradient id="paint4_linear_88:141" x1="411.5" y1="-78" x2="411.5"
+                                        y2="64.9999" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="white" />
+                                        <stop offset="1" stop-color="white" stop-opacity="0" />
+                                    </linearGradient>
+                                    <linearGradient id="paint5_linear_88:141" x1="372.5" y1="-69" x2="372.5"
+                                        y2="73.9999" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="white" />
+                                        <stop offset="1" stop-color="white" stop-opacity="0" />
+                                    </linearGradient>
+                                    <linearGradient id="paint6_linear_88:141" x1="409.5" y1="-102" x2="409.5"
+                                        y2="40.9999" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="white" />
+                                        <stop offset="1" stop-color="white" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="ad a1H a1k a1Z a1I[100px] " >
+
+        <div class="ai a1k a29">
+            <div class="aa">
+                <p class="
+              a1S
+              dark:aI
+              aH a1M
+            ">
+                    &copy; Created by Shamim Ahmed!
+                </p>
+            </div>
+        </div>
+        <div class="a3 a_ a2a a1Y[-1]">
+            <svg width="55" height="99" viewBox="0 0 55 99" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle opacity="0.8" cx="49.5" cy="49.5" r="49.5" fill="#959CB1" />
+                <mask id="mask0_94:899" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="99"
+                    height="99">
+                    <circle opacity="0.8" cx="49.5" cy="49.5" r="49.5" fill="#4A6CF7" />
+                </mask>
+                <g mask="url(#mask0_94:899)">
+                    <circle opacity="0.8" cx="49.5" cy="49.5" r="49.5" fill="url(#paint0_radial_94:899)" />
+                    <g opacity="0.8" filter="url(#filter0_f_94:899)">
+                        <circle cx="53.8676" cy="26.2061" r="20.3824" fill="white" />
+                    </g>
+                </g>
+                <defs>
+                    <filter id="filter0_f_94:899" x="12.4852" y="-15.1763" width="82.7646" height="82.7646"
+                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                        <feGaussianBlur stdDeviation="10.5" result="effect1_foregroundBlur_94:899" />
+                    </filter>
+                    <radialGradient id="paint0_radial_94:899" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                        gradientTransform="translate(49.5 49.5) rotate(90) scale(53.1397)">
+                        <stop stop-opacity="0.47" />
+                        <stop offset="1" stop-opacity="0" />
+                    </radialGradient>
+                </defs>
+            </svg>
+        </div>
+        <div class="a3 a5 a2b a1Y[-1]">
+            <svg width="79" height="94" viewBox="0 0 79 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect opacity="0.3" x="-41" y="26.9426" width="66.6675" height="66.6675"
+                    transform="rotate(-22.9007 -41 26.9426)" fill="url(#paint0_linear_94:889)" />
+                <rect x="-41" y="26.9426" width="66.6675" height="66.6675" transform="rotate(-22.9007 -41 26.9426)"
+                    stroke="url(#paint1_linear_94:889)" stroke-width="0.7" />
+                <path opacity="0.3" d="M50.5215 7.42229L20.325 1.14771L46.2077 62.3249L77.1885 68.2073L50.5215 7.42229Z"
+                    fill="url(#paint2_linear_94:889)" />
+                <path d="M50.5215 7.42229L20.325 1.14771L46.2077 62.3249L76.7963 68.2073L50.5215 7.42229Z"
+                    stroke="url(#paint3_linear_94:889)" stroke-width="0.7" />
+                <path opacity="0.3"
+                    d="M17.9721 93.3057L-14.9695 88.2076L46.2077 62.325L77.1885 68.2074L17.9721 93.3057Z"
+                    fill="url(#paint4_linear_94:889)" />
+                <path d="M17.972 93.3057L-14.1852 88.2076L46.2077 62.325L77.1884 68.2074L17.972 93.3057Z"
+                    stroke="url(#paint5_linear_94:889)" stroke-width="0.7" />
+                <defs>
+                    <linearGradient id="paint0_linear_94:889" x1="-41" y1="21.8445" x2="36.9671" y2="59.8878"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4A6CF7" stop-opacity="0.62" />
+                        <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_94:889" x1="25.6675" y1="95.9631" x2="-42.9608" y2="20.668"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4A6CF7" stop-opacity="0" />
+                        <stop offset="1" stop-color="#4A6CF7" stop-opacity="0.51" />
+                    </linearGradient>
+                    <linearGradient id="paint2_linear_94:889" x1="20.325" y1="-3.98039" x2="90.6248" y2="25.1062"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4A6CF7" stop-opacity="0.62" />
+                        <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
+                    </linearGradient>
+                    <linearGradient id="paint3_linear_94:889" x1="18.3642" y1="-1.59742" x2="113.9" y2="80.6826"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4A6CF7" stop-opacity="0" />
+                        <stop offset="1" stop-color="#4A6CF7" stop-opacity="0.51" />
+                    </linearGradient>
+                    <linearGradient id="paint4_linear_94:889" x1="61.1098" y1="62.3249" x2="-8.82468" y2="58.2156"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4A6CF7" stop-opacity="0.62" />
+                        <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
+                    </linearGradient>
+                    <linearGradient id="paint5_linear_94:889" x1="65.4236" y1="65.0701" x2="24.0178" y2="41.6598"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#4A6CF7" stop-opacity="0" />
+                        <stop offset="1" stop-color="#4A6CF7" stop-opacity="0.51" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
+    </footer>
+
+
+    <a href="javascript:void(0)"
+        class="
+        aj
+        a9
+        a1x
+        a1k
+        aI
+        a2c
+        a2d
+        a13
+        a2e
+        a2f
+        a2g
+        a2h
+        a1Y[999]
+        hover:a1n hover:a2i
+        a1p a1a a2j
+        back-to-top
+        a2k
+      ">
+        <span
+            class="
+          a28
+          a2l
+          a2m
+          a2n
+          a2o
+          aZ
+          a11[6px]
+        "></span>
+    </a>
+
+
+    <script src="js/glightbox.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // ==== pricing plan toggler
+        let togglePlan = document.querySelector("#togglePlan");
+
+        document.querySelector(".monthly").addEventListener("click", () => {
+            togglePlan.checked = false;
+        });
+        document.querySelector(".yearly").addEventListener("click", () => {
+            togglePlan.checked = true;
+        });
+
+        // ==== for menu scroll
+        const pageLink = document.querySelectorAll(".menu-scroll");
+
+        pageLink.forEach((elem) => {
+            elem.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.querySelector(elem.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth",
+                    offsetTop: 1 - 60,
+                });
+            });
+        });
+
+        // section menu active
+        function onScroll(event) {
+            const sections = document.querySelectorAll(".menu-scroll");
+            const scrollPos =
+                window.pageYOffset ||
+                document.documentElement.scrollTop ||
+                document.body.scrollTop;
+
+            for (let i = 0; i < sections.length; i++) {
+                const currLink = sections[i];
+                const val = currLink.getAttribute("href");
+                const refElement = document.querySelector(val);
+                const scrollTopMinus = scrollPos + 73;
+                if (
+                    refElement.offsetTop <= scrollTopMinus &&
+                    refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
+                ) {
+                    document.querySelector(".menu-scroll").classList.remove("active");
+                    currLink.classList.add("active");
+                } else {
+                    currLink.classList.remove("active");
+                }
+            }
+        }
+
+        window.document.addEventListener("scroll", onScroll);
+
+        //========= glightbox
+        GLightbox({
+            href: "https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM",
+            type: "video",
+            source: "youtube", //vimeo, youtube or local
+            width: 900,
+            autoplayVideos: true,
+        });
+    </script>
+</body>
+
+<!-- Mirrored from startup-tailwind.preview.uideck.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 May 2022 16:22:56 GMT -->
+
 </html>

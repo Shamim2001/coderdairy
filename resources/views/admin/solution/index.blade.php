@@ -24,7 +24,7 @@
                     @forelse ($solutions as $solution)
                         <tr>
                             <td class="border border-l-0 px-4 py-2"><a href="{{ route('solution.show', $solution) }}"
-                                    class="hover:text-teal-600">{{ $solution->problem->name }}</a></td>
+                                    class="hover:text-teal-600">{{ optional($solution->problem)->name }}</a></td>
 
                             <td class="border border-l-0 px-4 py-2 flex space-x-2 text-xs">
                                 <a href="{{ route('solution.edit', $solution) }}" class="btn-bs-primary">Edit</a>

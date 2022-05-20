@@ -136,8 +136,20 @@ class ProblemController extends Controller {
         $problem->tags()->sync( $request->tags );
 
         if ( !empty( $request->file( 'thumbnails' ) ) ) {
+
+            $thumbs = Media::where( ['problem_id' => $problem->id, 'user_id' => Auth::id()] )->get();
+            foreach ( $thumbs as $thumb ) {
+                $image = $thumb->name['fileName'];
+                // dd($thumb);
+                // dd($thumb->name->fileName);
+                // Storage::delete('public/uploads/' . $thumb->name);
+                Storage::delete( 'public/uploads/' . $image );
+                Media::find( $thumb->id )->delete();
+            }
+
             foreach ( $request->thumbnails as $thumb ) {
                 $image = time() . '-' . $thumb->getClientOriginalName();
+                Storage::delete( 'public/uploads' );
                 // save image
                 $thumb->storeAs( 'public/uploads', $image );
                 // Storage::put('public/uploads', $image);

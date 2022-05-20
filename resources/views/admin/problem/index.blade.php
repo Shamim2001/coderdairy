@@ -35,7 +35,6 @@
                             <td class="border border-l-0 px-4 py-2"><a href="{{ route('problem.show', $problem) }}"
                                     class="hover:text-teal-600">{{ $problem->name }}</a></td>
                             <td class="border border-l-0 px-4 py-2">{{ $problem->visibility }}</td>
-                            {{-- <td class="border border-l-0 px-4 py-2">{{ count($problem->problemC) }}</td> --}}
                             <td class="border border-l-0 px-4 py-2 text-xs">{{ $problem->category->name }}</td>
                             <td class="border border-l-0 px-4 py-2 capitalize">
                                 @foreach ($problem->tags as $tag)
