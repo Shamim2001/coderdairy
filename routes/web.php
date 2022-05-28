@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProblemController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
@@ -16,24 +17,27 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 
-Route::get( '/', function () {
-    return view( 'welcome' )->with([
-        'problems' => Problem::where('user_id', Auth::id())->get(),
-    ]);
-} );
+// Route::get( '/', function () {
+//     return view( 'welcome' )->with([
+//         'problems' => Problem::where('user_id', Auth::id())->get(),
+//     ]);
+// } );
+
+// frontend
+Route::get( '/', [FrontendController::class, 'index'] )->name( 'frontend.index' );
+Route::get( 'problems', [FrontendController::class, 'problem'] )->name( 'problems' );
+Route::get( 'show/{id}', [FrontendController::class, 'show'] )->name( 'frontend.show' );
+Route::get( 'query', [FrontendController::class, 'query'] )->name( 'query' );
+
+
 
 Route::prefix( 'dashboard' )->middleware( 'auth' )->group( function () {
 
     Route::get( '/', function () {
-        // $problem = Problem::all();
-        // dd($problem);
         return view( 'admin.index' )->with([
             'problem' => Problem::where('user_id', Auth::id())->get(),
             'solution' => Solution::where('user_id', Auth::id())->get(),
         ]);
-
-
-
     } )->name( 'dashboard' );
 
     Route::resource( 'problem', ProblemController::class );

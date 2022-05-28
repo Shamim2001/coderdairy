@@ -4,8 +4,8 @@
 <!-- General Report -->
     <div class="grid grid-cols-4 gap-6 xl:grid-cols-1">
 
-    <x-admin.report-card :data="$problem" text="problem" />
-    <x-admin.report-card :data="$solution" text="solution" />
+    <x-admin.report-card :data="$problem" text="problems" />
+    <x-admin.report-card :data="$solution" text="solutions" />
 
 
 

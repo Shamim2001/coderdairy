@@ -174,7 +174,23 @@ class ProblemController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy( Problem $problem ) {
-        $problem->tags()->detach();
+        // $thumbs = Media::where( ['problem_id' => $problem->id, 'user_id' => Auth::id()] )->get();
+        // foreach ( $thumbs as $thumb ) {
+        //     $image = $thumb->name['fileName'];
+        //     Storage::delete( 'public/uploads/' . $image );
+        //     Media::find( $thumb->id )->delete();
+        // }
+        // dd($problem->id);
+        $solution = Solution::get();
+
+        $thumbs = Media::where( ['solution_id' => $solution->id, 'user_id' => Auth::id()] )->get();
+
+        foreach ( $thumbs as $thumb ) {
+            $image = $thumb->name['fileName'];
+            Storage::delete( 'public/uploads/' . $image );
+            Media::find( $thumb->id )->delete();
+        }
+
         $problem->delete();
 
         return redirect()->route( 'problem.index' )->with( 'success', 'Problem Deleted!' );

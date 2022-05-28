@@ -59,6 +59,11 @@
         Media
       </a>
       <!-- end link -->
+      <!-- link -->
+      <a href="{{ route('frontend.index') }}" class="mb-3 bg-teal-600 px-2 py-1 text-white capitalize font-medium text-sm hover:text-black transition ease-in-out duration-500 {{ request()->routeIs('media.*') ? 'text-teal-600' : '' }}">
+        Go To
+      </a>
+      <!-- end link -->
 
 
     </div>

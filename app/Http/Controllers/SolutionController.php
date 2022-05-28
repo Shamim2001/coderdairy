@@ -7,6 +7,7 @@ use App\Models\Problem;
 use App\Models\Solution;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class SolutionController extends Controller {
     /**
@@ -39,13 +40,13 @@ class SolutionController extends Controller {
      */
     public function store( Request $request ) {
         $request->validate( [
-            'solution'        => ['required'],
+            'solution' => ['required'],
         ] );
 
         $solution = Solution::create( [
             'content'    => $request->solution,
             'problem_id' => $request->problem_id,
-            'user_id'     => Auth::id(),
+            'user_id'    => Auth::id(),
         ] );
 
         if ( !empty( $request->file( 'thumbnails' ) ) ) {
@@ -57,8 +58,8 @@ class SolutionController extends Controller {
 
                 // create Media
                 Media::create( [
-                    'name'       => $image,
-                    'user_id'    => Auth::id(),
+                    'name'        => $image,
+                    'user_id'     => Auth::id(),
                     'solution_id' => $solution->id,
                 ] );
 
@@ -108,6 +109,16 @@ class SolutionController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy( Solution $solution ) {
-        //
+        $thumbs = Media::where( ['solution_id' => $solution->id, 'user_id' => Auth::id()] )->get();
+
+        foreach ( $thumbs as $thumb ) {
+            $image = $thumb->name['fileName'];
+            Storage::delete( 'public/uploads/' . $image );
+            Media::find( $thumb->id )->delete();
+        }
+
+        $solution->delete();
+
+        return view( 'admin.solution.index' )->with( 'success', 'Solution Deleted!' );
     }
 }
