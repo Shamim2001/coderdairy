@@ -7,11 +7,17 @@ use App\Models\Solution;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 
 class FrontendController extends Controller
 {
     public function index()
     {
+        // Cache::put('cacheKey', 'This should be a cache key');
+        // dd(
+        //     Cache::get('cacheKey')
+        // );
+
         return view('frontend.index')->with([
             'problems' => Problem::where('user_id', Auth::id())->limit(6)->get(),
         ]);

@@ -176,7 +176,7 @@
                   sm:a2D
                   a23
                 ">
-                            {{ $problems->name }}
+                            {{ Str::limit($problems->name, 50) }}
                         </h2>
                         <div
                             class="

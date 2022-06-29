@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Startup Tailwind CSS Template</title>
+    <title>CoderDairy</title>
     <meta name="title" content="CoderDairy" />
     <meta name="description" content="" />
 
@@ -404,8 +404,8 @@
                             <div class=" a36 sm:a2Y md:ai md:az lg:a2Y xl:ai xl:a37 2xl:a2 ">
                                 <h3>
                                     <a href="{{ route('frontend.show', $problem->id) }}"
-                                        class=" a1g a1A dark:aI a27 sm:a2u ah a1Q hover:a1W dark:hover:a1 ">
-                                        {{ $problem->name }}
+                                        class=" a1g a1A dark:aI ah a1Q hover:a1W dark:hover:a1 ">
+                                        {{ Str::limit($problem->name, 50) }}
                                     </a>
                                 </h3>
                                 <p class=" a a1 a1 a3 a2 a2 a2 a2 dark:a2o dark:a2"

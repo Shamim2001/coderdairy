@@ -19,6 +19,7 @@ class SolutionController extends Controller {
         return view( 'admin.solution.index' )->with( [
             'solutions' => Solution::where( 'user_id', Auth::id() )->latest()->paginate( 10 ),
         ] );
+
     }
 
     /**
